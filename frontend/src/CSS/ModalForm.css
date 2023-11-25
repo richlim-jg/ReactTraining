@@ -1,0 +1,112 @@
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal, .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #888;
+    border: none;
+    font-family: 'Julius Sans One';
+    transition: 0.2s;
+}
+.close-modal:hover{
+    color: #FF0000;
+    text-shadow: 0px 0px 15px #FF0000;
+
+}
+
+.modalForm{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 70vh;
+    width: 25vw;
+    padding: 10%;
+    border-radius: 25px;
+    background-image: linear-gradient(to bottom right, #FF00E633, #95959511);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        1px 2px 3px #EEEEEE90 inset,
+        10px 10px 10px rgba(0, 0, 0, .1);
+}
+
+.modalHeader{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans';
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.modalForm > form{
+    width: 100%;
+
+}
+
+.modalSubmit{
+    position: relative;
+    left: 50%;
+    width: 50%;
+    border: none;
+    background-color: #FF862E;
+    color: #EEEEEE;
+    font-family: 'Julius Sans One';
+    font-size: 1.3rem;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.modalSubmit:hover{
+    outline: none;
+    color:rgba(0, 0, 0, .3);
+    box-shadow: 0 0 20px #FF862E;
+}

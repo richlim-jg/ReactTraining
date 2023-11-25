@@ -1,0 +1,117 @@
+
+.card{
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    padding: 20px 0;
+    border-radius: 30px;
+    transition: .3s;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .3), rgba(255, 255, 255, .1));
+    backdrop-filter: blur(30px);
+    box-shadow: 
+        1px 2px 3px #EEEEEE90 inset,
+        10px 10px 10px rgba(0, 0, 0, .1);
+}
+
+
+.approved{
+    box-shadow:
+    1px 2px 3px #EEEEEE90 inset,
+    0 0 20px #78EE9980; 
+}
+
+.cardData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    font-family: 'Julius Sans One';
+    color: #eee;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, .5);
+}
+
+.cardTitle{
+    font-family: 'Josefin Sans';
+    font-size: 1.5rem;
+    margin: auto;
+}
+.cardButtons{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cardBtn{
+    display: flex;
+}
+
+.cardBtn > button{
+    display: flex;
+    margin: 0 5px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 15px;
+    color: #333333;
+    font-family: 'Julius Sans One';
+    font-size: 1rem;
+    transition: .2s;
+    padding: 10px;
+
+}
+
+.svgIcon{
+    height: 20px;
+    width: 20px;
+}
+
+.acceptBtn{
+    background-color: #78EE9947;
+    box-shadow: 0 0 40px #78EE9947,
+                inset 0 0 40px #78EE9947,
+                inset 2px 2px 5px 2px #FFFFFF95;
+}
+
+.acceptBtn:hover{
+    color: #78EE9947;
+    box-shadow: 0 0 40px #78EE9975,
+                inset 0 0 40px #78EE9975,
+                inset 2px 2px 5px 2px #FFFFFF95;
+}
+
+.declineBtn{
+    background-color: #FD5B5B47;
+    box-shadow: 0 0 40px #FD5B5B47,
+                inset 0 0 40px #FD5B5B47,
+                inset 2px 2px 5px 2px #FFFFFF95;
+}
+
+.declineBtn:hover{
+    color: #FD5B5B;
+    box-shadow: 0 0 40px #FD5B5B75,
+                inset 0 0 40px #FD5B5B75,
+                inset 2px 2px 5px 2px #FFFFFF95;
+}
+
+.editBtn{
+    background-color: #FF862E;
+    box-shadow: 0 0 40px #FD5B5B47,
+                inset 0 0 40px #FD5B5B47,
+                inset 2px 2px 5px 2px #FFFFFF95;
+}
+
+.editBtn:hover{
+    color: #FD5B5B;
+    box-shadow: 0 0 40px #FD5B5B75,
+                inset 0 0 40px #FD5B5B75,
+                inset 2px 2px 5px 2px #FFFFFF95;
+}
+
+.cardInput{
+    font-size: 1rem;
+}
+.cardLabel{
+    font-size: 1rem;
+}

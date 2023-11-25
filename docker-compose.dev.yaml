@@ -1,0 +1,60 @@
+version: "3"
+services:
+  frontend:
+    # user: root # Delete No need to define this setting except development
+    image: zweb-masking-certificate-trustdock-frontend:dev
+    container_name: frontend
+    build:
+      dockerfile: ./frontend/Dockerfile
+    env_file:
+      - ./.env
+    ports:
+      - ${HOST_FRONTEND_PORT}:${CONTAINER_FRONTEND_PORT}
+    networks:
+      - net_prop
+    mem_limit: 1.1G
+    restart: always
+    tty: true
+  app:
+    container_name: backend
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+    ports:
+      - 50:80
+      - 8000:8000
+    volumes:
+      - ./backend:/app
+      - /app/vendor
+    environment:
+      - COMPOSER_ALLOW_SUPERUSER 1 # remove in production
+      - APP_DEBUG=true
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=backend
+      - DB_USERNAME=root
+      - DB_PASSWORD=password
+    depends_on:
+      [db] 
+    command: ["bash", "-c", "wait-for-it db:3306 -- php artisan migrate:fresh --seed && php artisan serve --host=0.0.0.0 --port=8000"]
+
+  db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    ports:
+      - 3406:3306
+    environment:
+      - MYSQL_DATABASE=backend
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - dbdata:/var/lib/mysql
+networks:
+  net_prop:
+    ipam:
+      driver: default
+      config:
+        - subnet: ${DOCKER_SUBNET}
+volumes:
+  dbdata:

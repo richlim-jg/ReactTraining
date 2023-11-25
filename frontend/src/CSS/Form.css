@@ -1,0 +1,94 @@
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 20px;
+    padding: 100px 50px;
+    border-radius: 25px;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .30), rgba(255, 255, 255, .05));
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        1px 2px 3px #EEEEEE90 inset,
+        10px 10px 10px rgba(0, 0, 0, .1);
+}
+
+.formHeader{
+    display: grid;
+    place-items: center;
+    font-family: 'Julius Sans One';
+    font-size: 2.5rem;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label{
+    float: left;
+    font-family: 'Julius Sans One';
+    font-size: 1.5rem;
+}
+
+input{
+    margin: 10px 0;
+    padding: 5px 10px;
+    color: #EEEEEE95;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Josefin Sans';
+    transition: .2s;
+}
+
+.formFooter > {
+    float: right;
+
+    border: 1px solid;
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0 0 5px #FF862E;
+}
+
+.loginBtn{
+    position: relative;
+    top: 20px;
+    width: 50%;
+    border: none;
+    background-color: #FF862E;
+    color: #EEEEEE;
+    font-family: 'Julius Sans One';
+    font-size: 1.3rem;
+    padding: 5px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.loginBtn:hover, .loginBtn:focus{ 
+    outline: none;
+    color:rgba(0, 0, 0, .3);
+    box-shadow: 0 0 20px #FF862E;
+}
+
+.loginA{
+    float: right;
+    text-decoration: none;
+    color: #EEEEEE;
+    font-family: 'Julius Sans One';
+    font-size: .8rem;
+    transition: .2s;
+}
+
+.loginA:hover{
+    color: #FF862E;
+}
+.error{
+    width: inherit;
+    margin: auto;
+    color: #E00;
+    font-family: 'Julius Sans One';
+}
